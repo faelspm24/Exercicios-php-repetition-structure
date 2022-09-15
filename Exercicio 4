@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<fieldset>
+<form action="calculo.php" method="POST">
+<p>Entre com o nome do úsuario: <input type="text" name="name" id="" placeholder="Digite seu nome"> </p> 
+<p>Entre com a senha: <input type="password" name="password" id="" placeholder="Digite sua senha"> </p> 
+<input type="submit" value="Enviar">
+</form>
+</fieldset>
+</body>
+</html>
+
+<--------------------------------------------- Calculo ------------------------------------------------------------>
+
+<?php
+
+if($_POST){
+
+$name = $_POST['name'];
+$password = $_POST['password'];
+
+if($password == "cotec" && ($name == "unesp")){
+
+echo "Seja Bem vindo";
+
+}
+
+else{
+    echo "Usuário ou senha inválidos!!, tente novamente!!!";
+}
+}
+?>
