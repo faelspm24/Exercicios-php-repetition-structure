@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 3</title>
+</head>
+<body>
+<h2> Número ímpar ou par </h2>
+<br>
+<fieldset>
+<form action="calculo.php" method="POST">
+<p>Digite um número: <input type="number" name="n1" placeholder="Digite um número"></p>
+<p><input type="submit" value="Calcular">
+<input type="reset" value="Limpar">
+</p>
+</form>
+</fieldset>
+</body>
+</html>
+
+<--------------------------------------------------- Calculo ----------------------------------------------------------->
+
+<?php
+
+if($_POST){
+
+$numero1 = $_POST['n1']; 
+
+
+if(($numero1 % 2) == 0){
+
+    echo "o número é par ";
+}
+
+else{
+    echo "o número é impar";
+}
+
+}
+?>
