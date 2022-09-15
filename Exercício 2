@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<fieldset>
+
+<form action="calc.php" method="POST">
+
+
+<p>Digite um número: </p> <input type="number" name="n1" step="1.00" required>
+
+<input type="submit" value="Enviar">
+<input type="reset" value="Cancelar">
+
+</form>
+</fieldset>
+
+
+
+<------------------------------------- Calculo ----------------------------------------------------------------->
+
+<?php
+
+if($_POST){
+
+$numero = $_POST['n1'];
+
+if($numero >= 0){
+
+echo "<span style=color:blue>Número Positivo</span> "; 
+
+}
+
+else{
+
+echo "<span style=color:red>Número Negativo</span>";
+
+}
+}
+?>
