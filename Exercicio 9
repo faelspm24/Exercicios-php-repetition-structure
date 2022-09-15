@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ex 9 </title>
+</head>
+<body>
+<h2> Informar frase </h2>
+<fieldset>
+<form action="calculo.php" method="POST">
+<p><input type="number" name="n1" placeholder="Digite um número"></p>
+<p><input type="text" name="frase"></p>
+<p><input type="submit" value="Enviar"></p>
+</form>
+</fieldset>
+</body>
+</html>
+
+<------------------------------------------------ Calculo ---------------------------------------------------->
+
+<?php
+
+if($_POST){
+
+$frase = $_POST['frase'];
+$numero = $_POST['n1'];
+
+for($i = 1; $i <= $numero; $i++){
+
+echo "<table><tr>${i}º número -- ${frase} </tr></table>";
+
+}
+}
+?>
