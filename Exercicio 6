@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+Dados Pessoais
+<hr>
+<form action="calc.php" method="POST">
+<fieldset>
+<p>Entre com o nome: <input type="text" name="name" id="" placeholder="Digite o nome"> </p> 
+<p>Entre com o peso: <input type="number" name="peso" id="" placeholder="Digite o seu peso"> </p> 
+<p> Sexo: <select id="" name="sexo">
+    <option value= "Masculino">Masculino</option>
+    <option value="Feminino">Feminino</option>
+</select>
+<p> Altura: <input type="number" step="1.77" name="altura" id="" placeholder="Digite sua altura"></p>
+</fieldset>
+<br>
+<fieldset>
+    <br>
+<input type="submit" value="Confirmar">
+<input type="reset" value="Limpar">
+<br>
+</fieldset>
+</form>
+</body>
+</html>
+
+<--------------------------------------------------- Calculo ---------------------------------------------------------->
+
+<?php
+
+if($_POST){
+$nome = $_POST['name'];
+$peso= $_POST['peso'];
+$sexo = $_POST['sexo'];
+$altura = $_POST['altura'];
+$res = 0;
+
+if($sexo == "Masculino"){
+
+    $res = ($altura * $altura) * 23;
+
+}else if ($sexo == "Feminino"){
+    $res = (altura * altura) * 22;
+}
+
+if($peso > $res){
+    echo "<p style-color-red;> {$peso} Acima do peso idel";
+    
+}else if($peso < $res){
+    echo "<p style-color-blue;> {$peso} Abaixo do peso ideal";
+}else {
+    echo "<p style-color-blue;> {$peso} Você está no peso ideal";
+}
+}
+?>
