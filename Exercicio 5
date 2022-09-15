@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<fieldset>
+<form action="calculo.php" method="POST">
+<p>Entre com a primeira nota: <input type="text" name="n1" id="" placeholder="Digite a primeira nota"> </p> 
+<p>Entre com a segunda nota: <input type="text" name="n2" id="" placeholder="Digite a segunda nota"> </p> 
+<input type="submit" value="Enviar">
+<input type="reset" value="Cancelar">
+</form>
+</fieldset>
+</body>
+</html>
+
+<------------------------------------------- Calculo ---------------------------------------------------------------->
+
+<?php
+
+if($_POST){
+
+$nota1 = $_POST['n1'];
+$nota2 = $_POST['n2'];
+$resultado = 0;
+
+$resultado = ($nota1 + $nota2) / 2;
+
+if($resultado  >= 8){
+
+echo "Aprovado";
+
+}
+
+else($resultado <= 3){
+
+    echo "Reprovado";
+}
+
+else if{
+
+echo "Recuperação";
+
+}
+}
+?>
