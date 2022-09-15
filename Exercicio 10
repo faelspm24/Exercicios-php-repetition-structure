@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 10</title>
+</head>
+<body>
+<h2> Rentabilidade Banco  </h2>
+<fieldset>
+<form action="calculo.php" method="POST">
+<p>Nome: <input type="text" name="name" placeholder="Digite o seu nome" required></p>
+<p> Valor para investimento <input type="number" name="vlinvestimento" placeholder="Digite o valor para investimento" required></p>    
+<p> Quantidade de meses para investimento (período) <input type="number"  max="12" name="periodoinvestido" placeholder="Quantidade de meses para investimento" required></p>
+<p>Tipo: <select id="" name="tipo" required>
+    <option value="1">Poupança</option>
+    <option value="2">Fundo renda fixa</option>
+</select></p>
+<p><input type="submit" value="Enviar"></p>
+</form>
+</fieldset>
+</body>
+</html>
+
+<---------------------------------------------------- Calculo ----------------------------------------------------->
+
+<?php
+
+if($_POST){
+
+$name = $_POST['name'];
+$tipo = $_POST['tipo'];
+$vlinvestimento = $_POST['vlinvestimento'];
+$periodoinves = $_POST['periodoinvestido'];
+$total = 0;
+$mostrarMes = 0;
+
+if($tipo == '1'){
+
+    $total = $vlinvestimento + ($vlinvestimento * 0.5 / 100);
+    $mostrarMes++;
+
+    $total = number_format($total, 3, "." , ".");
+
+    echo "{$name} Investimento do tipo 1, Poupança, valor investido foi de R$ {$vlinvestimento} , periodo do investimento foi de  ${periodoinves} meses , retornará o total de R$ {$total} ";
+
+    $vlinvestimento = $total;
+
+    }
+    
+else if($tipo == '2'){
+
+        $total = $vlinvestimento + ($vlinvestimento * 1.00 / 100);
+        $mostrarMes++;
+        
+        $total = number_format($total, 3, "." , ".");
+        
+        echo "{$name} Investimento do tipo 2, Renda fixa,  valor investido foi de R$ {$vlinvestimento}, periodo do investimento foi de   {$periodoinves} meses , retornará o total de R$ {$total} ";
+
+        $vlinvestimento = $total;
+   }
+}
+?>
